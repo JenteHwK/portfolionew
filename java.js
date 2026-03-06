@@ -1121,13 +1121,13 @@ function initAboutSection() {
     });
     
     // Marquee pause on hover
-    const marquee = aboutSection.querySelector('.marquee-track');
-    if (marquee) {
+    const marqueeTracks = aboutSection.querySelectorAll('.marquee-track');
+    if (marqueeTracks.length) {
         aboutSection.querySelector('.about-marquee')?.addEventListener('mouseenter', () => {
-            marquee.style.animationPlayState = 'paused';
+            marqueeTracks.forEach(track => track.style.animationPlayState = 'paused');
         });
         aboutSection.querySelector('.about-marquee')?.addEventListener('mouseleave', () => {
-            marquee.style.animationPlayState = 'running';
+            marqueeTracks.forEach(track => track.style.animationPlayState = 'running');
         });
     }
 }

@@ -1165,18 +1165,21 @@ body.light-mode .menu-toggle-text {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
+    display: flex;
 }
 
 .marquee-track {
     display: flex;
     gap: 3rem;
-    animation: marquee 25s linear infinite;
+    padding-right: 3rem;
+    animation: marquee 20s linear infinite;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 @keyframes marquee {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-100%); }
 }
 
 .marquee-text {
