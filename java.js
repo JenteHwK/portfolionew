@@ -486,13 +486,11 @@ function initLanguageToggle() {
     
     if (!langToggle) return;
     
-    // Check for saved language preference
-    let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+    // Check for saved language preference (default to Dutch)
+    let currentLang = localStorage.getItem('portfolio-lang') || 'nl';
     
-    // Apply saved language on load
-    if (currentLang === 'nl') {
-        switchLanguage('nl');
-    }
+    // Apply language on load
+    switchLanguage(currentLang);
     
     langToggle.addEventListener('click', () => {
         // Toggle language
@@ -525,6 +523,11 @@ function initLanguageToggle() {
                 el.textContent = translation;
             }
         });
+
+        // Re-split project titles after text update
+        if (typeof splitProjectTitles === 'function') {
+            splitProjectTitles();
+        }
     }
 }
 
@@ -663,7 +666,7 @@ function initProjectsInteraction() {
         currentProject = projectId;
 
         const data = projectsData[projectId];
-        const lang = localStorage.getItem('portfolio-lang') || 'en';
+        const lang = localStorage.getItem('portfolio-lang') || 'nl';
 
         // Update case study content
         updateCaseContent(data, lang);
@@ -830,7 +833,7 @@ function initProjectsInteraction() {
                         onComplete: () => {
                             caseOverlay.scrollTop = 0;
                             const data = projectsData[nextId];
-                            const lang = localStorage.getItem('portfolio-lang') || 'en';
+                            const lang = localStorage.getItem('portfolio-lang') || 'nl';
                             updateCaseContent(data, lang);
                             currentProject = nextId;
 
@@ -851,7 +854,7 @@ function initProjectsInteraction() {
                 } else {
                     caseOverlay.scrollTop = 0;
                     const data = projectsData[nextId];
-                    const lang = localStorage.getItem('portfolio-lang') || 'en';
+                    const lang = localStorage.getItem('portfolio-lang') || 'nl';
                     updateCaseContent(data, lang);
                     currentProject = nextId;
                     isAnimating = false;
