@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jente Hoogwerff Kroon — Portfolio</title>
+    <link rel="icon" type="image/png" href="images/JHK.png">
+    <link rel="apple-touch-icon" href="images/JHK.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="java.js"></script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <span class="loader-logo">JHK</span>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <a href="#home" class="logo">JHK</a>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link active" data-en="Home" data-nl="Home">Home</a></li>
+                <li><a href="#about" class="nav-link" data-en="About" data-nl="Over mij">About</a></li>
+                <li><a href="#projects" class="nav-link" data-en="Projects" data-nl="Projecten">Projects</a></li>
+                <li><a href="#skills" class="nav-link" data-en="Skills" data-nl="Vaardigheden">Skills</a></li>
+                <li><a href="#contact" class="nav-link nav-contact" data-en="Contact" data-nl="Contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="theme-icon sun" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.07 4.93L17.66 6.34M6.34 17.66L4.93 19.07M19.07 19.07L17.66 17.66M6.34 6.34L4.93 4.93" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <svg class="theme-icon moon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <!-- Language Toggle -->
+        <button class="lang-toggle" aria-label="Switch language" data-lang="en">
+            <span class="flag flag-nl">🇳🇱</span>
+            <span class="flag flag-en active">🇬🇧</span>
+        </button>
+
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <div class="menu-toggle-inner">
+                <span class="bar bar-top"></span>
+                <span class="bar bar-bottom"></span>
+            </div>
+            <span class="menu-toggle-text" data-en="Menu" data-nl="Menu">Menu</span>
+        </button>
+    </header>
+
+    <!-- Mobile Menu - Awwwards Inspired -->
+    <div class="mobile-menu">
+        <!-- Animated Background -->
+        <div class="mobile-menu-bg">
+            <div class="menu-bg-layer menu-bg-1"></div>
+            <div class="menu-bg-layer menu-bg-2"></div>
+        </div>
+        
+        <!-- Menu Content -->
+        <div class="mobile-menu-content">
+            <!-- Menu Header -->
+            <div class="mobile-menu-header">
+                <span class="menu-label" data-en="Navigation" data-nl="Navigatie">Navigation</span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <span class="nav-index">01</span>
+                        <a href="#home" class="mobile-nav-link" data-en="Home" data-nl="Home">
+                            <span class="link-text">Home</span>
+                            <span class="link-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <span class="nav-index">02</span>
+                        <a href="#about" class="mobile-nav-link" data-en="About" data-nl="Over mij">
+                            <span class="link-text">About</span>
+                            <span class="link-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <span class="nav-index">03</span>
+                        <a href="#projects" class="mobile-nav-link" data-en="Projects" data-nl="Projecten">
+                            <span class="link-text">Projects</span>
+                            <span class="link-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <span class="nav-index">04</span>
+                        <a href="#skills" class="mobile-nav-link" data-en="Skills" data-nl="Vaardigheden">
+                            <span class="link-text">Skills</span>
+                            <span class="link-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <span class="nav-index">05</span>
+                        <a href="#contact" class="mobile-nav-link" data-en="Contact" data-nl="Contact">
+                            <span class="link-text">Contact</span>
+                            <span class="link-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Menu Footer -->
+            <div class="mobile-menu-footer">
+                <div class="menu-social">
+                    <span class="menu-social-label" data-en="Connect" data-nl="Verbind">Connect</span>
+                    <div class="menu-social-links">
+                        <a href="https://www.linkedin.com/in/jente-hoogwerff-kroon-1b5aa2321/" target="_blank" rel="noopener" class="menu-social-link">LinkedIn</a>
+                        <a href="https://github.com/Jentehwk" target="_blank" rel="noopener" class="menu-social-link">GitHub</a>
+                    </div>
+                </div>
+                <div class="menu-info">
+                    <span class="menu-email">jentehoogwerffkroon@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="menu-decoration">
+            <span class="decoration-text">JHK</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-parallax-container">
+            <!-- Background Layer -->
+            <div class="parallax-layer parallax-bg" data-speed="0.2">
+                <div class="hero-gradient"></div>
+            </div>
+
+            <!-- Image Layer -->
+            <div class="parallax-layer parallax-image" data-speed="0.5">
+                <div class="hero-image-wrapper hero-image-horizontal mask-reveal">
+                    <div class="mask-inner">
+                        <img src="images/1.jpeg" alt="Jente Hoogwerff Kroon" class="hero-image">
+                    </div>
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+
+            <!-- Text Layer -->
+            <div class="parallax-layer parallax-text" data-speed="0.8">
+                <div class="hero-content">
+                    <div class="hero-intro">
+                        <span class="hero-greeting reveal-text" data-en="Hello, I'm" data-nl="Hallo, ik ben">Hello,
+                            I'm</span>
+                    </div>
+                    <h1 class="hero-name">
+                        <span class="name-line reveal-text">JENTE</span>
+                        <span class="name-line reveal-text">HOOGWERFF</span>
+                        <span class="name-line reveal-text">KROON</span>
+                    </h1>
+                    <div class="hero-role reveal-text">
+                        <span class="role-text" data-en="Software Developer" data-nl="Software Ontwikkelaar">Software
+                            Developer</span>
+                        <span class="role-divider">—</span>
+                        <span class="role-text" data-en="Designer" data-nl="Ontwerper">Designer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="scroll-text" data-en="Scroll" data-nl="Scroll">Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <!-- Marquee Banner -->
+        <div class="about-marquee">
+            <div class="marquee-track">
+                <span class="marquee-text" data-en="Creative Developer" data-nl="Creatieve Ontwikkelaar">Creative Developer</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-text" data-en="Problem Solver" data-nl="Probleemoplosser">Problem Solver</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-text" data-en="Design Enthusiast" data-nl="Design Liefhebber">Design Enthusiast</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-text" data-en="Creative Developer" data-nl="Creatieve Ontwikkelaar">Creative Developer</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-text" data-en="Problem Solver" data-nl="Probleemoplosser">Problem Solver</span>
+                <span class="marquee-divider">✦</span>
+                <span class="marquee-text" data-en="Design Enthusiast" data-nl="Design Liefhebber">Design Enthusiast</span>
+                <span class="marquee-divider">✦</span>
+            </div>
+        </div>
+
+        <div class="about-wrapper">
+            <!-- Left Column - Image -->
+            <div class="about-visual">
+                <div class="about-image-wrapper mask-reveal">
+                    <div class="mask-inner">
+                        <img src="images/Image.jpeg" alt="Jente Hoogwerff Kroon" class="about-img">
+                    </div>
+                    <!-- Floating Label -->
+                    <div class="about-floating-label">
+                        <span class="floating-year">2024</span>
+                        <span class="floating-location" data-en="Based in NL" data-nl="Gevestigd in NL">Based in NL</span>
+                    </div>
+                </div>
+                
+                <!-- Decorative Elements -->
+                <div class="about-decoration">
+                    <div class="deco-circle"></div>
+                    <div class="deco-line"></div>
+                </div>
+            </div>
+
+            <!-- Right Column - Content -->
+            <div class="about-content-wrapper">
+                <!-- Section Label -->
+                <div class="about-label">
+                    <span class="label-number">01</span>
+                    <span class="label-text" data-en="About" data-nl="Over mij">About</span>
+                    <div class="label-line"></div>
+                </div>
+
+                <!-- Main Headline -->
+                <h2 class="about-headline">
+                    <span class="headline-line">
+                        <span class="headline-word" data-en="I craft" data-nl="Ik creëer">I craft</span>
+                    </span>
+                    <span class="headline-line">
+                        <span class="headline-word headline-outline" data-en="digital" data-nl="digitale">digital</span>
+                    </span>
+                    <span class="headline-line">
+                        <span class="headline-word" data-en="experiences" data-nl="ervaringen">experiences</span>
+                    </span>
+                </h2>
+
+                <!-- Description -->
+                <div class="about-description-block">
+                    <p class="about-lead"
+                        data-en="A creative software developer and designer based in the Netherlands, passionate about crafting digital experiences that leave a lasting impression."
+                        data-nl="Een creatieve software ontwikkelaar en ontwerper uit Nederland, gepassioneerd door het creëren van digitale ervaringen die een blijvende indruk achterlaten.">
+                        A creative software developer and designer based in the Netherlands,
+                        passionate about crafting digital experiences that leave a lasting impression.
+                    </p>
+                    <p class="about-body"
+                        data-en="With a keen eye for detail and a love for clean, minimal design, I transform complex ideas into elegant, user-friendly solutions."
+                        data-nl="Met een scherp oog voor detail en een liefde voor strak, minimalistisch design, transformeer ik complexe ideeën in elegante, gebruiksvriendelijke oplossingen.">
+                        With a keen eye for detail and a love for clean, minimal design,
+                        I transform complex ideas into elegant, user-friendly solutions.
+                    </p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="about-stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-count="2">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <span class="stat-label" data-en="Years of Experience" data-nl="Jaar Ervaring">Years of Experience</span>
+                        <div class="stat-line"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-count="6">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <span class="stat-label" data-en="Projects Completed" data-nl="Projecten Voltooid">Projects Completed</span>
+                        <div class="stat-line"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" data-count="4">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <span class="stat-label" data-en="Happy Clients" data-nl="Tevreden Klanten">Happy Clients</span>
+                        <div class="stat-line"></div>
+                    </div>
+                </div>
+                <div class="about-cta-row">
+                    <a href="cv/Jente-Hoogwerff Kroon.pdf" download class="about-cv-btn">
+                        <span class="cv-btn-text" data-en="Download CV" data-nl="Download CV">Download CV</span>
+                        <span class="cv-btn-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3V16M12 16L7 11M12 16L17 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 21H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                    </a>
+                    
+                    <div class="about-scroll-hint">
+                        <span class="scroll-text" data-en="Scroll to explore" data-nl="Scroll om te verkennen">Scroll to explore</span>
+                        <div class="scroll-arrow">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Text -->
+        <div class="about-bg-text" aria-hidden="true">JHK</div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="timeline section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01.5</span>
+                <h2 class="section-title" data-en="Education" data-nl="Opleiding">Education</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="timeline-content">
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year" data-en="2024 - Present" data-nl="2024 - Heden">2024 - Present</span>
+                        <h3 class="timeline-title">MBO Software Developer</h3>
+                        <span class="timeline-company">Grafisch Lyceum Rotterdam</span>
+                        <p class="timeline-description"
+                            data-en="Learning to design software solutions, programming and testing with modern languages and techniques."
+                            data-nl="Leren om softwareoplossingen te ontwerpen, programmeren en testen met moderne talen en technieken.">
+                            Learning to design software solutions, programming and testing with modern languages and techniques.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year" data-en="May 2025" data-nl="Mei 2025">May 2025</span>
+                        <h3 class="timeline-title" data-en="Intern" data-nl="Stagiair">Intern</h3>
+                        <span class="timeline-company">Studio Flabbergasted</span>
+                        <p class="timeline-description"
+                            data-en="Supported creative projects and gained practical experience within a professional work environment."
+                            data-nl="Ondersteuning bij creatieve projecten en praktijkervaring opgedaan binnen een professionele werkomgeving.">
+                            Supported creative projects and gained practical experience within a professional work environment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2022 - 2024</span>
+                        <h3 class="timeline-title">MAVO</h3>
+                        <span class="timeline-company">Christelijk Lyceum Delft</span>
+                        <p class="timeline-description"
+                            data-en="Successfully completed with a focus on economics and preparation for vocational education."
+                            data-nl="Succesvol afgerond met een focus op economie en voorbereiding op het beroepsonderwijs.">
+                            Successfully completed with a focus on economics and preparation for vocational education.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">2020 - 2022</span>
+                        <h3 class="timeline-title">HAVO</h3>
+                        <span class="timeline-company">Christelijk Lyceum Delft</span>
+                        <p class="timeline-description"
+                            data-en="Participated in continued education with a broad subject package to promote analytical thinking."
+                            data-nl="Deelgenomen aan het voortgezet onderwijs met een breed vakkenpakket ter bevordering van analytisch denken.">
+                            Participated in continued education with a broad subject package to promote analytical thinking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="timeline section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01.6</span>
+                <h2 class="section-title" data-en="Work Experience" data-nl="Werkervaring">Work Experience</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="timeline-content">
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year" data-en="May 2025 - Present" data-nl="Mei 2025 - Heden">May 2025 - Present</span>
+                        <h3 class="timeline-title" data-en="Delivery Driver" data-nl="Bezorger">Delivery Driver</h3>
+                        <span class="timeline-company">Restaria</span>
+                        <p class="timeline-description"
+                            data-en="Responsible for timely and customer-friendly delivery of orders and correct handling of payments."
+                            data-nl="Verantwoordelijk voor het tijdig en klantvriendelijk bezorgen van bestellingen en het correct afhandelen van betalingen.">
+                            Responsible for timely and customer-friendly delivery of orders and correct handling of payments.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year" data-en="Dec 2024 - Apr 2025" data-nl="Dec 2024 - Apr 2025">Dec 2024 - Apr 2025</span>
+                        <h3 class="timeline-title" data-en="Kitchen Staff" data-nl="Keukenpersoneel">Kitchen Staff</h3>
+                        <span class="timeline-company">De Beren</span>
+                        <p class="timeline-description"
+                            data-en="Preparing dishes according to strict quality standards at a fast pace."
+                            data-nl="Het bereiden van gerechten volgens vaste kwaliteitsstandaarden in een hoog tempo.">
+                            Preparing dishes according to strict quality standards at a fast pace.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year" data-en="Apr 2024 - Jul 2024" data-nl="Apr 2024 - Jul 2024">Apr 2024 - Jul 2024</span>
+                        <h3 class="timeline-title" data-en="Kitchen Staff" data-nl="Keukenpersoneel">Kitchen Staff</h3>
+                        <span class="timeline-company">Anne&Max</span>
+                        <p class="timeline-description"
+                            data-en="Worked in a team preparing fresh lunch dishes and maintaining kitchen hygiene."
+                            data-nl="Samengewerkt in een hecht team om verse lunchgerechten te bereiden en de keuken hygiënisch te onderhouden.">
+                            Worked in a team preparing fresh lunch dishes and maintaining kitchen hygiene.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year" data-en="Oct 2023 - Apr 2024" data-nl="Okt 2023 - Apr 2024">Oct 2023 - Apr 2024</span>
+                        <h3 class="timeline-title" data-en="Dishwasher" data-nl="Afwashulp">Dishwasher</h3>
+                        <span class="timeline-company">Anne&Max</span>
+                        <p class="timeline-description"
+                            data-en="Maintained a clean workspace and ensured quick turnover of dishes to support kitchen and service."
+                            data-nl="Zorg gedragen voor een schone werkplek en een snelle doorloop van servies om de keuken en bediening optimaal te ondersteunen.">
+                            Maintained a clean workspace and ensured quick turnover of dishes to support kitchen and service.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year" data-en="Oct 2023 - May 2024" data-nl="Okt 2023 - Mei 2024">Oct 2023 - May 2024</span>
+                        <h3 class="timeline-title">Hockey Trainer</h3>
+                        <span class="timeline-company">Ring Pass Delft</span>
+                        <p class="timeline-description"
+                            data-en="Coached and guided young athletes in improving their technique and fostering team spirit."
+                            data-nl="Gecoacht en begeleid van jonge sporters bij het verbeteren van hun techniek en het stimuleren van teamgeest.">
+                            Coached and guided young athletes in improving their technique and fostering team spirit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title" data-en="Selected Work" data-nl="Geselecteerd Werk">Selected Work</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <!-- Project List -->
+            <div class="projects-list">
+                <!-- Project Item 1 - Modellen Agency -->
+                <a href="https://102126.stu.sd-lab.nl/BeroepModellen/Home/home.php" target="_blank" rel="noopener noreferrer" class="project-item">
+                    <div class="project-item-inner">
+                        <span class="project-index">01</span>
+                        <div class="project-content">
+                            <span class="project-year">2025</span>
+                            <h3 class="project-title-split" data-en="Modeling Agency" data-nl="Modellen Agency">
+                                Modellen Agency</h3>
+                            <span class="project-category" data-en="Web Development" data-nl="Webontwikkeling">Web
+                                Development</span>
+                        </div>
+                        <div class="project-preview-image">
+                            <img src="images/bc1.jpeg" alt="Modellen Agency Preview" loading="lazy">
+                        </div>
+                        <div class="project-view-indicator">
+                            <span data-en="View Project" data-nl="Bekijk Project">View Project</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project Item 2 - Tracker -->
+                <a href="https://102126.stu.sd-lab.nl/Tracker/" target="_blank" rel="noopener noreferrer" class="project-item">
+                    <div class="project-item-inner">
+                        <span class="project-index">02</span>
+                        <div class="project-content">
+                            <span class="project-year">2025</span>
+                            <h3 class="project-title-split" data-en="Habit Tracker" data-nl="Habit Tracker">
+                                Tracker</h3>
+                            <span class="project-category" data-en="Web Application" data-nl="Web Applicatie">Web
+                                Application</span>
+                        </div>
+                        <div class="project-preview-image">
+                            <img src="images/Image.jpeg" alt="Tracker Preview" loading="lazy">
+                        </div>
+                        <div class="project-view-indicator">
+                            <span data-en="View Project" data-nl="Bekijk Project">View Project</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project Item 3 - Marktplaats voor de Superrich -->
+                <a href="https://github.com/JenteHwK/The-Vault" target="_blank" rel="noopener noreferrer" class="project-item">
+                    <div class="project-item-inner">
+                        <span class="project-index">03</span>
+                        <div class="project-content">
+                            <span class="project-year">2024</span>
+                            <h3 class="project-title-split" data-en="Marketplace for the Superrich" data-nl="Marktplaats voor de Superrich">
+                                Marktplaats voor de Superrich</h3>
+                            <span class="project-category" data-en="Web Development" data-nl="Webontwikkeling">Web Development</span>
+                        </div>
+                        <div class="project-preview-image">
+                            <img src="images/1.jpeg" alt="Marktplaats Preview" loading="lazy">
+                        </div>
+                        <div class="project-view-indicator">
+                            <span data-en="View on GitHub" data-nl="Bekijk op GitHub">View on GitHub</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project Item 4 - DUO Quiz -->
+                <a href="https://github.com/JenteHwK/DUO2" target="_blank" rel="noopener noreferrer" class="project-item">
+                    <div class="project-item-inner">
+                        <span class="project-index">04</span>
+                        <div class="project-content">
+                            <span class="project-year">2024</span>
+                            <h3 class="project-title-split" data-en="DUO Quiz" data-nl="DUO Quiz">
+                                DUO Quiz</h3>
+                            <span class="project-category" data-en="Web Application" data-nl="Web Applicatie">Web Application</span>
+                        </div>
+                        <div class="project-preview-image">
+                            <img src="images/bc1.jpeg" alt="DUO Quiz Preview" loading="lazy">
+                        </div>
+                        <div class="project-view-indicator">
+                            <span data-en="View on GitHub" data-nl="Bekijk op GitHub">View on GitHub</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title" data-en="Skills" data-nl="Vaardigheden">Skills</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="skills-content">
+                <div class="skills-category reveal-up">
+                    <h3 class="category-title" data-en="Languages" data-nl="Talen">Languages</h3>
+                    <div class="skills-circular-grid">
+                        <div class="skill-circle-item">
+                            <div class="skill-circle" data-percent="95">
+                                <svg class="skill-circle-svg" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="skill-circle-progress" cx="60" cy="60" r="54"></circle>
+                                </svg>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <span class="skill-name">HTML</span>
+                        </div>
+                        <div class="skill-circle-item">
+                            <div class="skill-circle" data-percent="90">
+                                <svg class="skill-circle-svg" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="skill-circle-progress" cx="60" cy="60" r="54"></circle>
+                                </svg>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <span class="skill-name">CSS</span>
+                        </div>
+                        <div class="skill-circle-item">
+                            <div class="skill-circle" data-percent="85">
+                                <svg class="skill-circle-svg" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="skill-circle-progress" cx="60" cy="60" r="54"></circle>
+                                </svg>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <span class="skill-name">JavaScript</span>
+                        </div>
+                        <div class="skill-circle-item">
+                            <div class="skill-circle" data-percent="75">
+                                <svg class="skill-circle-svg" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="skill-circle-progress" cx="60" cy="60" r="54"></circle>
+                                </svg>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <span class="skill-name">PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category reveal-up">
+                    <h3 class="category-title" data-en="Frameworks" data-nl="Frameworks">Frameworks</h3>
+                    <div class="skills-circular-grid">
+                        <div class="skill-circle-item">
+                            <div class="skill-circle" data-percent="90">
+                                <svg class="skill-circle-svg" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="skill-circle-progress" cx="60" cy="60" r="54"></circle>
+                                </svg>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <span class="skill-name">Bootstrap</span>
+                        </div>
+                        <div class="skill-circle-item">
+                            <div class="skill-circle" data-percent="85">
+                                <svg class="skill-circle-svg" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="skill-circle-progress" cx="60" cy="60" r="54"></circle>
+                                </svg>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <span class="skill-name">Tailwind</span>
+                        </div>
+                        <div class="skill-circle-item">
+                            <div class="skill-circle" data-percent="70">
+                                <svg class="skill-circle-svg" viewBox="0 0 120 120">
+                                    <circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+                                    <circle class="skill-circle-progress" cx="60" cy="60" r="54"></circle>
+                                </svg>
+                                <span class="skill-percent">10%</span>
+                            </div>
+                            <span class="skill-name">React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category reveal-up">
+                    <h3 class="category-title" data-en="Tools" data-nl="Tools">Tools</h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag" data-en="AI Tools" data-nl="AI Tools">AI Tools</span>
+                        <span class="skill-tag">Terminal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title" data-en="Contact" data-nl="Contact">Contact</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info reveal-up">
+                    <h3 class="contact-heading" data-en="Let's work together" data-nl="Laten we samenwerken">Let's work
+                        together</h3>
+                    <p class="contact-text"
+                        data-en="Have a project in mind or just want to say hello? I'm always open to discussing new opportunities and ideas."
+                        data-nl="Heb je een project in gedachten of wil je gewoon even hallo zeggen? Ik sta altijd open voor het bespreken van nieuwe mogelijkheden en ideeën.">
+                        Have a project in mind or just want to say hello?
+                        I'm always open to discussing new opportunities and ideas.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:hello@jentehk.com" class="contact-link">
+                            <span class="link-label">Email</span>
+                            <span class="link-value">Jente@hoogwerffkroon.nl</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <span class="link-label">LinkedIn</span>
+                            <span class="link-value">https://www.linkedin.com/in/jente-hoogwerff-kroon/</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <span class="link-label">GitHub</span>
+                            <span class="link-value">github.com/jentehwk</span>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal-up">
+                    <div class="form-group">
+                        <label for="name" class="form-label" data-en="Name" data-nl="Naam">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                        <span class="input-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label" data-en="Email" data-nl="E-mail">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                        <span class="input-line"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label" data-en="Message" data-nl="Bericht">Message</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" rows="4"
+                            required></textarea>
+                        <span class="input-line"></span>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span data-en="Send Message" data-nl="Verstuur Bericht">Send Message</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-logo">JHK</span>
+                <p class="footer-text" data-en="© 2026 Jente Hoogwerff Kroon. All rights reserved."
+                    data-nl="© 2026 Jente Hoogwerff Kroon. Alle rechten voorbehouden.">© 2026 Jente Hoogwerff Kroon. All
+                    rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <span class="social-text">LinkedIn</span>
+                        <span class="social-arrow">↗</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <span class="social-text">GitHub</span>
+                        <span class="social-arrow">↗</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <span class="social-text">Instagram</span>
+                        <span class="social-arrow">↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <span class="back-to-top-text">TOP</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
+</body>
+
+</html>
