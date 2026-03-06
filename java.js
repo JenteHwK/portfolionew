@@ -1181,65 +1181,25 @@ function initBackToTop() {
 }
 
 /**
- * Contact Form with EmailJS Integration
+ * Contact Form — opens user's mail client with pre-filled fields
  */
 function initContactForm() {
-const contactForm = document.querySelector('.contact-form');
-
+    const contactForm = document.querySelector('.contact-form');
     if (!contactForm) return;
 
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        // Get form data
+
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
-        
-        // Simple validation
-        if (!data.name || !data.email || !data.message) {
-            showFormMessage('Please fill in all fields', 'error');
-            return;
-        }
-        
-        const btn = contactForm.querySelector('.submit-btn');
-        const originalText = btn.querySelector('span').textContent;
-        
-        // Show loading state
-        btn.querySelector('span').textContent = 'Sending...';
-        btn.disabled = true;
-        btn.style.opacity = '0.7';
 
-        
-        // Simulated success (remove when EmailJS is configured)
-        setTimeout(() => {
-            showFormMessage('Message sent successfully!', 'success');
-        contactForm.reset();
-        
-        // Reset button after delay
-        setTimeout(() => {
-            btn.querySelector('span').textContent = originalText;
-                btn.disabled = false;
-                btn.style.opacity = '1';
-            }, 2000);
-        }, 1000);
+        const subject = encodeURIComponent(`Portfolio bericht van ${data.name}`);
+        const body = encodeURIComponent(`Naam: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
+
+        window.location.href = `mailto:102126@glr.nl?subject=${subject}&body=${body}`;
     });
 }
 
-function showFormMessage(message, type) {
-    const contactForm = document.querySelector('.contact-form');
-    const btn = contactForm.querySelector('.submit-btn');
-    const span = btn.querySelector('span');
-
-    span.textContent = message;
-
-    if (type === 'success') {
-        btn.style.background = 'var(--white)';
-        btn.style.color = 'var(--black)';
-    } else {
-        btn.style.background = '#ff4444';
-        btn.style.color = 'var(--white)';
-    }
-}
 
 /**
  * Timeline Animations with GSAP
